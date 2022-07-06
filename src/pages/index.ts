@@ -1,1 +1,6 @@
 export { default as Home } from "./Home";
+export { default as Matches } from "./Matches";
+export { default as Explore } from "./Explore";
+export { default as Football } from "./Football";
+export { default as Leagues } from "./Leagues";
+export { default as Profile } from "./Profile";
