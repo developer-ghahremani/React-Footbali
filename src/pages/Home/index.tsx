@@ -1,9 +1,7 @@
-import { MainLayout } from "../../components/layouts";
+import { MainLayout } from "~/components/layouts";
 import React from "react";
 
-type Props = {};
-
-const Home = (props: Props) => {
+const Home = () => {
   return <MainLayout>salamn</MainLayout>;
 };
 
