@@ -16,27 +16,19 @@ const DateItem = (props: Props) => {
 
   return (
     <div
-      className="mr-10 cursor-pointer"
+      className={`flex flex-col items-center cursor-pointer text-xs md:text-sm ${
+        props.currentDate === props.date.format(dateFormat)
+          ? "font-bold text-primary"
+          : ""
+      }`}
       key={props.date.format(dateFormat)}
       onClick={handleClick}>
-      <p
-        className={`${
-          (!props.currentDate &&
-            props.date.format(dateFormat) === moment().format(dateFormat)) ||
-          props.currentDate === props.date.format(dateFormat)
-            ? "font-bold border-b-2 border-b-primary text-primary"
-            : ""
-        }`}>
-        {props.date.format(dateFormat) ===
-        moment().add(1, "d").format(dateFormat)
-          ? "tomorrow"
-          : props.date.format(dateFormat) ===
-            moment().add(-1, "d").format(dateFormat)
-          ? "yesterday"
-          : props.date.format(dateFormat) === moment().format(dateFormat)
+      <p>
+        {props.date.format(dateFormat) === moment().format(dateFormat)
           ? "today"
-          : props.date.format("MM/DD")}
+          : props.date.format("ddd")}
       </p>
+      <p>{props.date.format("MMMM DD")}</p>
     </div>
   );
 };

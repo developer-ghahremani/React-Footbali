@@ -4,19 +4,17 @@ import { parse, stringifyUrl } from "query-string";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import DateItem from "./DateItem";
-
-const dateFormat = "YYYY-MM-DD";
+import { dateFormat } from "~/constant";
 
 const DatePicker = () => {
   const { pathname, search } = useLocation();
-  const { currentDate } = parse(search);
-
+  const { currentDate = moment().format(dateFormat) } = parse(search);
   const navigate = useNavigate();
-  const ref = useRef<HTMLDivElement>(null);
+  if (typeof currentDate !== "string") return null;
 
   const getDays = (): Moment[] => {
-    const fromDate = moment().add(-10, "d");
-    const toDate = moment().add(7, "d");
+    const fromDate = moment(currentDate, dateFormat).add(-3, "d");
+    const toDate = moment(currentDate, dateFormat).add(3, "d");
     var days: Moment[] = [];
     var day = fromDate;
 
@@ -27,9 +25,11 @@ const DatePicker = () => {
     return days;
   };
 
-  useEffect(() => {
-    ref.current?.scroll({ left: 200, behavior: "smooth" });
-  }, []);
+  const handeToday = () => {
+    const query: any = parse(search) || {};
+    query.currentDate = moment().format(dateFormat);
+    navigate(stringifyUrl({ url: pathname, query }));
+  };
 
   const handleChangeDate = (m: Moment) => {
     const query: any = parse(search) || {};
@@ -38,7 +38,14 @@ const DatePicker = () => {
   };
 
   return (
-    <div className=" flex py-4 overflow-x-scroll bg-white" ref={ref}>
+    <div className="flex items-center justify-between py-4 bg-white">
+      {currentDate !== moment().format(dateFormat) && (
+        <div
+          className="bg-primary md:text-base p-2 text-xs text-white rounded-lg cursor-pointer"
+          onClick={handeToday}>
+          <p>today</p>
+        </div>
+      )}
       {getDays().map((item) => (
         <DateItem
           onClick={handleChangeDate}

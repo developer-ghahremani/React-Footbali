@@ -6,7 +6,7 @@ type Props = { children: React.ReactNode };
 const MainLayout = (props: Props) => {
   return (
     <div className="flex flex-col h-screen">
-      <div className="md:mx-auto md:max-w-4xl md:w-full flex-1 mx-4 overflow-auto">
+      <div className="md:mx-auto md:max-w-2xl md:w-full flex-1 mx-4 overflow-auto">
         {props.children}
       </div>
       <Footer />
