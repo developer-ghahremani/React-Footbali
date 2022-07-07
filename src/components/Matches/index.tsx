@@ -20,8 +20,13 @@ const Matches = () => {
   const groupedMatch = groupBy(data.response, "league.name");
   return (
     <div>
-      {Object.keys(groupedMatch).map((item) => (
-        <FixtureItem title={item} matches={groupedMatch[item]} key={item} />
+      {Object.keys(groupedMatch).map((item, index) => (
+        <FixtureItem
+          index={index}
+          title={item}
+          matches={groupedMatch[item]}
+          key={item}
+        />
       ))}
     </div>
   );

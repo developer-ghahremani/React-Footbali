@@ -8,6 +8,7 @@ import UpArrow from "~/components/icons/UpArrow";
 type Props = {
   title: string;
   matches: MatchModel[];
+  index: number;
 };
 
 const FixtureItem = (props: Props) => {
@@ -17,7 +18,9 @@ const FixtureItem = (props: Props) => {
   };
 
   return (
-    <div className="rounded-2xl md:text-base text-xss p-2 mb-3 text-xs border">
+    <div
+      className="rounded-2xl md:text-base text-xss animate__animated animate__fadeInUp p-2 mb-3 text-xs border"
+      style={{ animationDelay: `${props.index / 4}s` }}>
       <div
         className="flex items-center justify-between cursor-pointer"
         onClick={toggleExpand}>
