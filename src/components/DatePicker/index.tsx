@@ -15,7 +15,7 @@ const DatePicker = () => {
   const ref = useRef<HTMLDivElement>(null);
 
   const getDays = (): Moment[] => {
-    const fromDate = moment().add(-6, "M");
+    const fromDate = moment().add(-10, "d");
     const toDate = moment().add(7, "d");
     var days: Moment[] = [];
     var day = fromDate;
@@ -28,7 +28,7 @@ const DatePicker = () => {
   };
 
   useEffect(() => {
-    ref.current?.scroll({ left: 2200, behavior: "smooth" });
+    ref.current?.scroll({ left: 200, behavior: "smooth" });
   }, []);
 
   const handleChangeDate = (m: Moment) => {
