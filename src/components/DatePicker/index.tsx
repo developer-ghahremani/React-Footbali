@@ -4,8 +4,7 @@ import { parse, stringifyUrl } from "query-string";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import DateItem from "./DateItem";
-
-const dateFormat = "YYYY-MM-DD";
+import { dateFormat } from "~/constant";
 
 const DatePicker = () => {
   const { pathname, search } = useLocation();
@@ -15,7 +14,7 @@ const DatePicker = () => {
   const ref = useRef<HTMLDivElement>(null);
 
   const getDays = (): Moment[] => {
-    const fromDate = moment().add(-6, "M");
+    const fromDate = moment().add(-1, "M");
     const toDate = moment().add(7, "d");
     var days: Moment[] = [];
     var day = fromDate;

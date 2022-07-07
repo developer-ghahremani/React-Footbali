@@ -1,11 +1,10 @@
-import MatchModel from "~/models/Match.model";
 import { dateFormat } from "../../constant/index";
 import moment from "moment";
 import service from "./";
 
 const fixtures = service.injectEndpoints({
   endpoints: (build) => ({
-    getMatches: build.query<MatchModel[], { currentDate?: string }>({
+    getMatches: build.query<[], { currentDate?: string }>({
       query: ({ currentDate }) => ({
         url: "",
         params: {

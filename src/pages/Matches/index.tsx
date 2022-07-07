@@ -1,4 +1,4 @@
-import { DatePicker, Matches as MatchList } from "~/components";
+import { DatePicker, Stages } from "~/components";
 
 import { MainLayout } from "~/components/layouts";
 
@@ -8,7 +8,7 @@ const Matches = (props: Props) => {
   return (
     <MainLayout>
       <DatePicker />
-      <MatchList />
+      <Stages />
     </MainLayout>
   );
 };

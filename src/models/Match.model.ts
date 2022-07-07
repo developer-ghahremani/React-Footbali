@@ -1,118 +1,130 @@
-interface MatchModel {
-  match_id: string;
-  country_id: string;
-  country_name: string;
-  league_id: string;
-  league_name: string;
-  match_date: string;
-  match_status: string;
-  match_time: string;
-  match_hometeam_id: string;
-  match_hometeam_name: string;
-  match_hometeam_score: string;
-  match_awayteam_name: string;
-  match_awayteam_id: string;
-  match_awayteam_score: string;
-  match_hometeam_halftime_score: string;
-  match_awayteam_halftime_score: string;
-  match_hometeam_extra_score: string;
-  match_awayteam_extra_score: string;
-  match_hometeam_penalty_score: string;
-  match_awayteam_penalty_score: string;
-  match_hometeam_ft_score: string;
-  match_awayteam_ft_score: string;
-  match_hometeam_system: string;
-  match_awayteam_system: string;
-  match_live: string;
-  match_round: string;
-  match_stadium: string;
-  match_referee: string;
-  team_home_badge: string;
-  team_away_badge: string;
-  league_logo: string;
-  country_logo: string;
-  league_year: string;
-  fk_stage_key: string;
-  stage_name: string;
-  goalscorer: Goalscorer[];
-  cards: Card[];
-  substitutions: Substitutions;
-  lineup: Lineup;
-  statistics: Statistic[];
-  statistics_1half: Statistics1half[];
+interface Match {
+  Eid: string;
+  Pids: Pids;
+  Sids: Sids;
+  Tr1: string;
+  Tr2: string;
+  Trh1: string;
+  Trh2: string;
+  Tr1OR: string;
+  Tr2OR: string;
+  T1: T1[];
+  T2: T2[];
+  Eps: "FT" | "NS";
+  Esid: number;
+  Epr: number;
+  Ecov: number;
+  Ern: number;
+  ErnInf: string;
+  Ewt: number;
+  Et: number;
+  Esd: number;
+  LuUT: any;
+  Eds: any;
+  Edf: any;
+  Eact: number;
+  IncsX: number;
+  ComX: number;
+  LuX: number;
+  StatX: number;
+  SubsX: number;
+  SDFowX: number;
+  SDInnX: number;
+  EO: number;
+  LuC: number;
+  Ehid: number;
+  Stg: Stg;
+  Pid: number;
+  Spid: number;
+  seriesInfo: SeriesInfo;
+  Awt?: number;
+  Trp1: string;
+  Trp2: string;
 }
 
-export interface Goalscorer {
-  time: string;
-  home_scorer: string;
-  home_scorer_id: string;
-  home_assist: string;
-  home_assist_id: string;
-  score: string;
-  away_scorer: string;
-  away_scorer_id: string;
-  away_assist: string;
-  away_assist_id: string;
-  info: string;
-  score_info_time: string;
+interface Pids {
+  8: string;
+  1: string;
+  12: string;
+  6: string;
+  28: string;
 }
 
-export interface Card {
-  time: string;
-  home_fault: string;
-  card: string;
-  away_fault: string;
-  info: string;
-  home_player_id: string;
-  away_player_id: string;
-  score_info_time: string;
+interface Sids {
+  8: string;
+  1: string;
+  12: string;
+  6: string;
+  28: string;
 }
 
-export interface Home {
-  time: string;
-  substitution: string;
-  substitution_player_id: string;
+interface Pids2 {
+  1: string[];
+  6: string[];
+  8: string[];
+  12: string[];
+  28: string[];
+  15: string[];
 }
 
-export interface Away {
-  time: string;
-  substitution: string;
-  substitution_player_id: string;
+interface T1 {
+  Nm: string;
+  ID: string;
+  tbd: number;
+  Img: string;
+  Gd: number;
+  Pids: Pids2;
+  CoNm: string;
+  CoId: string;
+  HasVideo: boolean;
 }
 
-export interface Substitutions {
-  home: Home[];
-  away: Away[];
+interface Pids3 {
+  1: string[];
+  6: string[];
+  8: string[];
+  12: string[];
+  28: string[];
+  15: string[];
 }
 
-export interface Home2 {
-  starting_lineups: any[];
-  substitutes: any[];
-  coach: any[];
-  missing_players: any[];
+interface T2 {
+  Nm: string;
+  ID: string;
+  tbd: number;
+  Img: string;
+  Gd: number;
+  Pids: Pids3;
+  CoNm: string;
+  CoId: string;
+  HasVideo: boolean;
+  NewsTag: string;
 }
 
-export interface Away2 {
-  starting_lineups: any[];
-  substitutes: any[];
-  coach: any[];
-  missing_players: any[];
+interface Stg {
+  Sid: string;
+  Snm: string;
+  Sds: string;
+  Scd: string;
+  Cid: string;
+  Cnm: string;
+  Csnm: string;
+  Ccd: string;
+  Ccdiso: string;
+  CompId: string;
+  CompN: string;
+  CompD: string;
+  Scu: number;
+  Chi: number;
+  Shi: number;
+  Sdn: string;
+  CompST: string;
 }
 
-export interface Lineup {
-  home: Home2;
-  away: Away2;
+interface SeriesInfo {
+  totalLegs: number;
+  currentLeg: number;
+  aggScoreTeam1: number;
+  aggScoreTeam2: number;
 }
-
-export interface Statistic {
-  type: string;
-  home: string;
-  away: string;
-}
-
-export interface Statistics1half {
-  type: string;
-  home: string;
-  away: string;
-}
-export default MatchModel;
+export default Match;

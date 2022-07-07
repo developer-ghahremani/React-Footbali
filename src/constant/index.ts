@@ -1,3 +1,3 @@
 export { default as pageNames } from "./pageNames";
-export const dateFormat = "YYYY-MM-DD";
+export const dateFormat = "YYYYMMDD";
 export default {};
