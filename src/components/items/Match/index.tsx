@@ -65,7 +65,7 @@ const MatchItem = (props: Props) => {
       </div>
       {selectedFixture && (
         // <MatchEvent match={selectedFixture} />
-        <div className="mr-14 mt-4">
+        <div className="mr-10 md:mr-14  mt-4">
           <MatchEvent match={selectedFixture} />
         </div>
       )}

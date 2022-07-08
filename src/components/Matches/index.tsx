@@ -1,5 +1,4 @@
 import { FixtureItem } from "../items";
-import React from "react";
 import { dateFormat } from "~/constant";
 import { groupBy } from "lodash";
 import moment from "moment";
@@ -21,12 +20,7 @@ const Matches = () => {
   return (
     <div>
       {Object.keys(groupedMatch).map((item, index) => (
-        <FixtureItem
-          index={index}
-          title={item}
-          matches={groupedMatch[item]}
-          key={item}
-        />
+        <FixtureItem title={item} matches={groupedMatch[item]} key={item} />
       ))}
     </div>
   );
