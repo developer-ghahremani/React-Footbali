@@ -8,8 +8,11 @@ type Props = { matchEvent: MatchEvent; homeTeamId: number; index: number };
 const MatchEventItem = (props: Props) => {
   return (
     <div
-      className="md:text-sm animate__animated animate__fadeInUp flex flex-col text-xs"
-      style={{ animationDelay: `${props.index / 3}s` }}>
+      className="md:text-sm
+      flex flex-col text-xs"
+      // animate__animated animate__fadeInUp
+      // style={{ animationDelay: `${props.index / 3}s` }}
+    >
       <div className="flex items-center">
         <div className=" flex justify-end flex-1"></div>
         <div className="w-[1px] h-8 bg-gray-400"></div>

@@ -1,5 +1,5 @@
 interface MatchEvent {
-  time: Time;
+  time: MatchTime;
   team: Team;
   player: Player;
   assist: Assist;
@@ -8,7 +8,7 @@ interface MatchEvent {
   comments?: any;
 }
 
-interface Time {
+export interface MatchTime {
   elapsed: number;
   extra?: any;
 }
@@ -19,7 +19,7 @@ interface Team {
   logo: string;
 }
 
-interface Player {
+export interface Player {
   id: number;
   name: string;
 }
