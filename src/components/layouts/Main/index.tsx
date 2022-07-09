@@ -17,7 +17,7 @@ const MainLayout = (props: Props) => {
   return (
     <div className="flex flex-col h-screen md:h-auto">
       <Navbar />
-      <div className="md:mx-auto md:max-w-2xl flex-1 mx-4 overflow-auto md:w-full md:min-h-screen">
+      <div className="md:mx-auto md:max-w-4xl flex-1 mx-4 overflow-auto md:w-full md:min-h-screen">
         {props.children}
       </div>
       <Footer />

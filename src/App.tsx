@@ -17,7 +17,7 @@ const App = () => {
           <Route {...route} key={route.path} />
         ))}
 
-        <Route path="/" element={<Navigate to={pageNames.matches} replace />} />
+        {/* <Route path="/" element={<Navigate to={pageNames.matches} replace />} /> */}
       </Routes>
     </BrowserRouter>
   );

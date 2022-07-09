@@ -1,5 +1,6 @@
 import MatchModel from "~/models/Match.model";
-import service from "./";
+import service from ".";
+
 const match = service.injectEndpoints({
   endpoints: (build) => ({
     getMatches: build.query<

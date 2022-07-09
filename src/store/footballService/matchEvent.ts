@@ -1,5 +1,5 @@
 import MatchEvent from "~/models/MatchEvent.model";
-import service from "./";
+import service from ".";
 import { useParams } from "react-router-dom";
 
 const matchEvent = service.injectEndpoints({

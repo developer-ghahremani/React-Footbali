@@ -4,12 +4,15 @@ import { DownArrow } from "~/components/icons";
 import MatchEvent from "~/components/MatchEvent";
 import MatchModel from "~/models/Match.model";
 import UpArrow from "~/components/icons/UpArrow";
-import { dateFormat } from "~/constant";
 import moment from "moment";
+import { pageNames } from "~/constant";
+import { stringifyUrl } from "query-string";
+import { useNavigate } from "react-router-dom";
 
 type Props = { match: MatchModel };
 
 const MatchItem = (props: Props) => {
+  const navigate = useNavigate();
   const [selectedFixture, setSelectedFixture] = useState<MatchModel | null>(
     null
   );
@@ -19,50 +22,58 @@ const MatchItem = (props: Props) => {
     setSelectedFixture(props.match);
   };
 
+  const handleMatchDetail = () => {
+    navigate(
+      stringifyUrl({
+        url: pageNames.match,
+        query: { matchId: props.match.fixture.id },
+      }),
+      { state: props.match }
+    );
+  };
+
   return (
-    <div>
-      <div className="mt-2">
-        <div className=" flex items-center">
-          <div className=" flex items-center justify-end flex-1">
-            <p className="mx-2">{props.match.teams.home.name}</p>
-            <img
-              src={props.match.teams.home.logo}
-              className="max-w-8 max-h-8"
-              alt=""
+    <div className="mt-2">
+      <div className=" flex items-center">
+        <div className=" flex items-center justify-end flex-1 ">
+          <p className="mx-2">{props.match.teams.home.name}</p>
+          <img
+            src={props.match.teams.home.logo}
+            className="max-w-8 max-h-8"
+            alt=""
+          />
+        </div>
+
+        <p
+          onClick={handleMatchDetail}
+          className="mx-2 bg-[#EFEFEF] px-4 cursor-pointer rounded-xl py-1">
+          {props.match.fixture.status.short === "FT"
+            ? props.match.goals.home + " - " + props.match.goals.away
+            : "-"}
+        </p>
+
+        <div className=" flex items-center justify-start flex-1">
+          <img
+            src={props.match.teams.away.logo}
+            className="max-w-8 max-h-8"
+            alt=""
+          />
+          <p className="mx-2">{props.match.teams.away.name}</p>
+        </div>
+        <div className="flex items-center">
+          {selectedFixture ? (
+            <UpArrow className="cursor-pointer" onClick={toggleFixtureEvent} />
+          ) : (
+            <DownArrow
+              className="cursor-pointer"
+              onClick={toggleFixtureEvent}
             />
-          </div>
+          )}
 
-          <p className="mx-2">
-            {props.match.fixture.status.short === "FT"
-              ? props.match.goals.home + " - " + props.match.goals.away
-              : "-"}
-          </p>
-
-          <div className=" flex items-center justify-start flex-1">
-            <img
-              src={props.match.teams.away.logo}
-              className="max-w-8 max-h-8"
-              alt=""
-            />
-            <p className="mx-2">{props.match.teams.away.name}</p>
-          </div>
-          <div className="flex items-center">
-            {selectedFixture ? (
-              <UpArrow
-                className="cursor-pointer"
-                onClick={toggleFixtureEvent}
-              />
-            ) : (
-              <DownArrow
-                className="cursor-pointer"
-                onClick={toggleFixtureEvent}
-              />
-            )}
-
-            <p>{moment(props.match.fixture.date).format("HH:mm")}</p>
-          </div>
+          <p>{moment(props.match.fixture.date).format("HH:mm")}</p>
         </div>
       </div>
+
       {selectedFixture && (
         // <MatchEvent match={selectedFixture} />
         <div className="mr-10 md:mr-14  mt-4">

@@ -38,7 +38,7 @@ const DatePicker = () => {
   };
 
   return (
-    <div className="flex items-center justify-between py-4">
+    <div className="flex items-center justify-between pb-4">
       {currentDate !== moment().format(dateFormat) && (
         <div
           className="bg-primary md:text-base p-2 text-xs text-white rounded-lg cursor-pointer"

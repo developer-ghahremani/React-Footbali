@@ -4,6 +4,10 @@ import Field from "~/assets/images/field.png";
 import FieldSelected from "~/assets/images/field_selected.png";
 import Football from "~/assets/images/football.png";
 import FootballSelected from "~/assets/images/football_selected.png";
+import Home from "~/assets/images/home.png";
+import HomeSelected from "~/assets/images/home_selected.png";
+import News from "~/assets/images/news.png";
+import NewsSelected from "~/assets/images/news_selected.png";
 import Trophy from "~/assets/images/trophy.png";
 import TrophySelected from "~/assets/images/trophy_selected.png";
 import User from "~/assets/images/user.png";
@@ -17,35 +21,35 @@ const menuItems: {
   path: string;
 }[] = [
   {
+    icon: Home,
+    selectedIcon: HomeSelected,
+    title: "Home",
+    path: pageNames.home,
+  },
+  {
     icon: Field,
     selectedIcon: FieldSelected,
-    title: "fixtures",
+    title: "Matches",
     path: pageNames.matches,
   },
   {
-    icon: Explore,
-    selectedIcon: ExploreSelected,
-    title: "explore",
-    path: pageNames.explore,
+    icon: News,
+    selectedIcon: NewsSelected,
+    title: "news",
+    path: pageNames.news,
   },
-  {
-    icon: Football,
-    selectedIcon: FootballSelected,
-    title: "football",
-    path: pageNames.football,
-  },
-  {
-    icon: Trophy,
-    selectedIcon: TrophySelected,
-    title: "trophy",
-    path: pageNames.leagues,
-  },
-  {
-    icon: User,
-    selectedIcon: UserSelected,
-    title: "user",
-    path: pageNames.profile,
-  },
+  // {
+  //   icon: Trophy,
+  //   selectedIcon: TrophySelected,
+  //   title: "trophy",
+  //   path: pageNames.leagues,
+  // },
+  // {
+  //   icon: User,
+  //   selectedIcon: UserSelected,
+  //   title: "user",
+  //   path: pageNames.profile,
+  // },
 ];
 
 export default menuItems;

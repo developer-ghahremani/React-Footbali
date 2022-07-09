@@ -1,7 +1,7 @@
 import { MatchEventItem } from "../items";
 import MatchModel from "~/models/Match.model";
 import React from "react";
-import { useGetMatchEventQuery } from "~/store/service/matchEvent";
+import { useGetMatchEventQuery } from "~/store/footballService/matchEvent";
 
 type Props = { match: MatchModel };
 
