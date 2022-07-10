@@ -10,12 +10,14 @@ const reducers = combineReducers({
   [newsService.reducerPath]: newsService.reducer,
 });
 
-const persistConfig = {
-  key: "root",
-  storage,
-};
-
-const persistedReducer = persistReducer(persistConfig, reducers);
+const persistedReducer = persistReducer(
+  {
+    key: "root",
+    storage,
+    blacklist: [newsService.reducerPath],
+  },
+  reducers
+);
 
 const store = configureStore({
   reducer: persistedReducer,

@@ -22,8 +22,8 @@ const MatchDetail = (props: Props) => {
 
   return (
     <div>
-      <div className="rounded-xl bg-white mt-4 ">
-        <div className="flex py-4 justify-between items-center">
+      <div className="rounded-xl mt-4 bg-white">
+        <div className="flex items-center justify-between py-4">
           <div></div>
           <div className="flex items-center">
             <img src={props.match.league.flag} className="w-7 h-7" alt="" />
@@ -31,8 +31,8 @@ const MatchDetail = (props: Props) => {
           </div>
           <div></div>
         </div>
-        <div className="flex mt-16 items-center md:text-xl text-sm">
-          <div className="flex-1 flex justify-end items-center">
+        <div className="md:text-xl flex items-center mt-16 text-sm">
+          <div className="flex items-center justify-end flex-1">
             <p className=" font-bold">{props.match.teams.home.name}</p>
             <img
               src={props.match.teams.home.logo}
@@ -40,15 +40,15 @@ const MatchDetail = (props: Props) => {
               alt=""
             />
           </div>
-          <div className="flex flex-col items-center md:mx-4">
+          <div className="md:mx-4 flex flex-col items-center">
             <p className="font-bold">
               {props.match.goals.home + " - " + props.match.goals.away}
             </p>
-            <p className="text-xs md:text-sm text-gray-400 font-bold">
+            <p className="md:text-sm text-xs font-bold text-gray-400">
               {props.match.fixture.status.long}
             </p>
           </div>
-          <div className="flex-1 flex justify-start items-center">
+          <div className="flex items-center justify-start flex-1">
             <img
               src={props.match.teams.away.logo}
               className="w-12 h-12"
@@ -57,8 +57,8 @@ const MatchDetail = (props: Props) => {
             <p className="font-bold">{props.match.teams.away.name}</p>
           </div>
         </div>
-        <div className="flex mt-8 items-center">
-          <div className="flex-1 flex justify-end items-end flex-wrap md:flex-row flex-col">
+        <div className="flex items-center mt-8">
+          <div className="md:flex-row flex flex-col flex-wrap items-end justify-end flex-1">
             {data.response
               .filter(
                 (item) =>
@@ -74,9 +74,9 @@ const MatchDetail = (props: Props) => {
               ))}
           </div>
 
-          <img src={Goal} alt="" className="w-6 h-6 md:mx-16 mx-8" />
+          <img src={Goal} alt="" className="md:mx-16 w-6 h-6 mx-8" />
 
-          <div className="flex-1 flex justify-start items-start flex-wrap md:flex-row flex-col">
+          <div className="md:flex-row flex flex-col flex-wrap items-start justify-start flex-1">
             {data.response
               .filter(
                 (item) =>
@@ -93,15 +93,14 @@ const MatchDetail = (props: Props) => {
           </div>
         </div>
         <div className="h-[1px] mt-4 bg-gray-200"></div>
-        <div className="flex justify-center py-4 text-xs items-center">
-          <p className="mx-1">
+        <div className="flex items-center justify-center py-4 text-xs">
+          <p>
             {moment(props.match.fixture.date).format("dd, MMM D YYYY, HH:mm")}
           </p>
 
           {!!props.match.fixture.venue?.name && (
-            <div className="flex mx-1 items-center">
+            <div className="md:mx-4 flex items-center mx-1">
               <img src={Stadium} className="w-6 h-6 rotate-90" alt="" />
-
               <p>
                 {props.match.fixture.venue.city +
                   ", " +
@@ -110,17 +109,17 @@ const MatchDetail = (props: Props) => {
             </div>
           )}
           {!!props.match.fixture.referee && (
-            <div className="flex mx-1 items-center">
-              <img src={Cards} className="w-6 h-6 rotate-90" alt="" />
+            <div className="flex items-center">
+              <img src={Cards} className="w-6 h-6" alt="" />
               <p>{props.match.fixture.referee}</p>
             </div>
           )}
         </div>
       </div>
-      <div className="rounded-xl bg-white my-4 py-4 ">
+      <div className="rounded-xl py-4 my-4 bg-white">
         <MatchEvent match={props.match} />
       </div>
-      <div className="rounded-xl bg-white my-4 py-4">
+      <div className="rounded-xl py-4 my-4 bg-white">
         <HeadToHead
           h2h={props.match.teams.home.id + "-" + props.match.teams.away.id}
         />

@@ -2,6 +2,7 @@ import Footer from "./Footer";
 import Footer2 from "./Footer2";
 import Navbar from "./Navbar";
 import React from "react";
+import SideBar from "./SideBar";
 
 type Props = { children: React.ReactNode };
 
@@ -15,13 +16,16 @@ const MainLayout = (props: Props) => {
   //   </div>
   // );
   return (
-    <div className="flex flex-col h-screen md:h-auto">
-      <Navbar />
-      <div className="md:mx-auto md:max-w-4xl flex-1 mx-4 overflow-auto md:w-full md:min-h-screen">
-        {props.children}
+    <div className="relative w-full h-screen">
+      <div className="md:h-auto absolute flex flex-col w-full h-screen">
+        <Navbar />
+        <div className="md:mx-auto md:max-w-4xl md:w-full md:min-h-screen md:mb-0 flex-1 mx-4 mb-20 overflow-auto">
+          {props.children}
+        </div>
+        <Footer />
+        <Footer2 />
       </div>
-      <Footer />
-      <Footer2 />
+      {/* <SideBar /> */}
     </div>
   );
   return (

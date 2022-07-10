@@ -1,2 +1,2 @@
-@tailwind base;@tailwind components;@tailwind utilities;body{background-color:#efefef}
+@tailwind base;@tailwind components;@tailwind utilities;.sidebar__container{@apply fixed z-50 w-full h-full bg-black bg-opacity-25}.sidebar{@apply w-80 bg-yellow-50 flex flex-col justify-between h-full}body{background-color:#efefef}
 /*# sourceMappingURL=main.min.css.map */
