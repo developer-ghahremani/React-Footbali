@@ -4,3 +4,11 @@
 .sidebar {
   @apply w-80 bg-yellow-50 flex flex-col justify-between h-full;
 }
+
+.main__section {
+  @apply md:mx-auto md:max-w-4xl md:w-full md:min-h-screen md:mb-0 flex-1 mx-4 mb-20 overflow-auto mt-4;
+}
+
+.main {
+  @apply md:h-auto  absolute flex flex-col w-full h-screen;
+}

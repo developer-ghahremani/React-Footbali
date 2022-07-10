@@ -6,6 +6,7 @@ import MatchEvent from "../MatchEvent";
 import MatchModel from "~/models/Match.model";
 import Stadium from "~/assets/images/field_selected.png";
 import moment from "moment";
+import { useAppSelector } from "~/store";
 import { useGetMatchEventQuery } from "~/store/footballService/matchEvent";
 
 type Props = {
@@ -16,13 +17,17 @@ const MatchDetail = (props: Props) => {
   const { isError, isFetching, data } = useGetMatchEventQuery({
     fixtureId: props.match.fixture.id,
   });
+  const { darkMode } = useAppSelector((s) => s.settings.ui);
 
   if (isError) return <p>error</p>;
   if (isFetching || !data) return <p>loading</p>;
 
   return (
     <div>
-      <div className="rounded-xl mt-4 bg-white">
+      <div
+        className={`rounded-xl ${
+          darkMode ? "bg-darkMode-secondary" : "bg-lightMode-secondary"
+        } shadow-lg`}>
         <div className="flex items-center justify-between py-4">
           <div></div>
           <div className="flex items-center">
@@ -116,10 +121,16 @@ const MatchDetail = (props: Props) => {
           )}
         </div>
       </div>
-      <div className="rounded-xl py-4 my-4 bg-white">
+      <div
+        className={`rounded-xl ${
+          darkMode ? "bg-darkMode-secondary" : "bg-lightMode-secondary"
+        } py-4 my-4`}>
         <MatchEvent match={props.match} />
       </div>
-      <div className="rounded-xl py-4 my-4 bg-white">
+      <div
+        className={`rounded-xl ${
+          darkMode ? "bg-darkMode-secondary" : "bg-lightMode-secondary"
+        } py-4 my-4`}>
         <HeadToHead
           h2h={props.match.teams.home.id + "-" + props.match.teams.away.id}
         />

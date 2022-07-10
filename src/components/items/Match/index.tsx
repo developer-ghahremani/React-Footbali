@@ -35,7 +35,7 @@ const MatchItem = (props: Props) => {
   return (
     <div className="mt-2">
       <div className=" flex items-center">
-        <div className=" flex items-center justify-end flex-1 ">
+        <div className=" flex items-center justify-end flex-1">
           <p className="mx-2">{props.match.teams.home.name}</p>
           <img
             src={props.match.teams.home.logo}
@@ -46,7 +46,7 @@ const MatchItem = (props: Props) => {
 
         <p
           onClick={handleMatchDetail}
-          className="mx-2 bg-[#EFEFEF] px-4 cursor-pointer rounded-xl py-1">
+          className="bg-lightMode-primary text-darkMode-primary rounded-xl px-4 py-1 mx-2 cursor-pointer">
           {props.match.fixture.status.short === "FT"
             ? props.match.goals.home + " - " + props.match.goals.away
             : "-"}
@@ -76,7 +76,7 @@ const MatchItem = (props: Props) => {
 
       {selectedFixture && (
         // <MatchEvent match={selectedFixture} />
-        <div className="mr-10 md:mr-14  mt-4">
+        <div className="md:mr-14 mt-4 mr-10">
           <MatchEvent match={selectedFixture} />
         </div>
       )}

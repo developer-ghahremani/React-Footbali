@@ -35,7 +35,7 @@ const menuItems: {
   {
     icon: News,
     selectedIcon: NewsSelected,
-    title: "news",
+    title: "News",
     path: pageNames.news,
   },
   // {

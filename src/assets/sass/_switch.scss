@@ -1,0 +1,73 @@
+/* Non-Important */
+// .container {
+//   width: 35px;
+//   position: relative;
+//   margin: 100px auto 0;
+// }
+
+/* Switch Specific */
+.switch {
+  display: block;
+  position: relative;
+  width: 35px;
+  height: 22px;
+  border-radius: 13px;
+  background-color: #d9e2e4;
+  border: 1px #bfc7c9 solid;
+  cursor: pointer;
+}
+.switch::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff;
+  border: 1px #bfc7c9 solid;
+}
+
+.switch,
+.switch::before {
+  transition: background-color 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    border-color 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    left 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  -webkit-transition: background-color 300ms
+      cubic-bezier(0.645, 0.045, 0.355, 1),
+    border-color 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    left 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  -moz-transition: background-color 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    border-color 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    left 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  -o-transition: background-color 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    border-color 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    left 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.switch.on {
+  background-color: #63c2de;
+  border: 1px #39b2d5 solid;
+}
+
+.switch.on::before {
+  left: 15px;
+  top: 2px;
+  border: 1px #39b2d5 solid;
+}
+
+// input {
+//   display: block;
+//   position: absolute;
+//   left: 50%;
+//   top: -25px;
+//   transform: translateX(-50%);
+// }
+
+.hide {
+  display: none;
+}

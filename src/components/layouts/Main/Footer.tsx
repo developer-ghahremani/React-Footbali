@@ -11,7 +11,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="md:hidden fixed bottom-0 flex justify-between w-full py-3 bg-white border-t">
+    <div className="md:hidden bg-lightMode-secondary text-darkMode-primary fixed bottom-0 flex justify-between w-full py-3 border-t">
       {menuItems.map((option) => (
         <div
           key={option.path}

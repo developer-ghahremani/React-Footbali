@@ -2,7 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 @import "component";
-
-body {
-  background-color: #efefef;
-}
+@import "switch";
