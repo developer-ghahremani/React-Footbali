@@ -43,7 +43,7 @@ const DatePicker = () => {
         <div
           className="bg-primary md:text-base p-2 text-xs text-white rounded-lg cursor-pointer"
           onClick={handeToday}>
-          <p>today</p>
+          <p>Today</p>
         </div>
       )}
       {getDays().map((item) => (

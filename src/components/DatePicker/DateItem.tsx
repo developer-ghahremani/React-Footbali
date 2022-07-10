@@ -25,7 +25,7 @@ const DateItem = (props: Props) => {
       onClick={handleClick}>
       <p>
         {props.date.format(dateFormat) === moment().format(dateFormat)
-          ? "today"
+          ? "Today"
           : props.date.format("ddd")}
       </p>
       <p>{props.date.format("MMMM DD")}</p>

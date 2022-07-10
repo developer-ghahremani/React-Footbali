@@ -10,8 +10,8 @@ const Home = () => {
         <div className="flex-1">
           <Matches />
         </div>
-        <div className="flex-1 hidden md:block">
-          <NewsList pageSize={10} />
+        <div className="md:block flex-1 hidden">
+          <NewsList pageSize={15} />
         </div>
       </div>
     </MainLayout>

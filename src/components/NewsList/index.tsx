@@ -19,7 +19,7 @@ const NewsList = (props: Props) => {
       } px-2 pt-3`}>
       <div
         className={`grid gap-4 ${
-          props.pageSize > 10 ? "grid-cols-2" : "grid-cols-1"
+          props.pageSize > 15 ? "grid-cols-2" : "grid-cols-1"
         }`}>
         {data.articles.slice(1, data.articles.length).map((news) => (
           <NewsItem news={news} key={news.url} />

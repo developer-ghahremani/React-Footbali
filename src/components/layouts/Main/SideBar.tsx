@@ -44,7 +44,7 @@ const SideBar = () => {
               <div
                 className=" flex items-center cursor-pointer"
                 onClick={handleToggleSidebar}>
-                <p className="font-bold">close</p>
+                <p className="font-bold">Close</p>
                 <Close />
               </div>
             </div>

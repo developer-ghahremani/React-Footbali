@@ -28,7 +28,7 @@ const MatchDetail = (props: Props) => {
         className={`rounded-xl ${
           darkMode ? "bg-darkMode-secondary" : "bg-lightMode-secondary"
         } shadow-lg`}>
-        <div className="flex items-center justify-between py-4">
+        <div className="py-4bg-red-500 flex items-center justify-between">
           <div></div>
           <div className="flex items-center">
             <img src={props.match.league.flag} className="w-7 h-7" alt="" />
@@ -37,7 +37,7 @@ const MatchDetail = (props: Props) => {
           <div></div>
         </div>
         <div className="md:text-xl flex items-center mt-16 text-sm">
-          <div className="flex items-center justify-end flex-1">
+          <div className="md:flex-row flex flex-col-reverse items-center justify-end flex-1">
             <p className=" font-bold">{props.match.teams.home.name}</p>
             <img
               src={props.match.teams.home.logo}
@@ -53,7 +53,7 @@ const MatchDetail = (props: Props) => {
               {props.match.fixture.status.long}
             </p>
           </div>
-          <div className="flex items-center justify-start flex-1">
+          <div className="md:flex-row flex flex-col items-center justify-start flex-1">
             <img
               src={props.match.teams.away.logo}
               className="w-12 h-12"
@@ -98,7 +98,7 @@ const MatchDetail = (props: Props) => {
           </div>
         </div>
         <div className="h-[1px] mt-4 bg-gray-200"></div>
-        <div className="flex items-center justify-center py-4 text-xs">
+        <div className="md:flex-row flex flex-col items-center justify-center py-4 text-xs">
           <p>
             {moment(props.match.fixture.date).format("dd, MMM D YYYY, HH:mm")}
           </p>
