@@ -124,13 +124,15 @@ const MatchDetail = (props: Props) => {
       <div
         className={`rounded-xl ${
           darkMode ? "bg-darkMode-secondary" : "bg-lightMode-secondary"
-        } py-4 my-4`}>
+        } p-4 my-4`}>
+        <p className="text-xl">Match events</p>
         <MatchEvent match={props.match} />
       </div>
       <div
         className={`rounded-xl ${
           darkMode ? "bg-darkMode-secondary" : "bg-lightMode-secondary"
-        } py-4 my-4`}>
+        } p-4 my-4`}>
+        <p className="text-xl">Head To Head</p>
         <HeadToHead
           h2h={props.match.teams.home.id + "-" + props.match.teams.away.id}
         />

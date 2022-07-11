@@ -7,7 +7,7 @@ const everythingNews = newsService.injectEndpoints({
       query: ({ pageSize }) => ({
         url: "/everything",
         params: {
-          apiKey: "03c6dc7bfbdd45ac8eab98aa84580a4c",
+          apiKey: "e1e4e65a647f44d48d96ea0ea3d83ef4",
           q: "football",
           page: 1,
           pageSize,
